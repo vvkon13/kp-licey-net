@@ -1,65 +1,343 @@
-import Image from "next/image";
+//src/app/page.tsx
+"use client"
+import Link from 'next/link';
+import { Chip } from '@heroui/chip';
+import { CardBody, Card } from '@heroui/card';
+import { Button } from '@heroui/button';
+import {
+  CheckCircleIcon,
+  RocketLaunchIcon,
+  CodeBracketIcon,
+  ServerIcon,
+  ArrowsRightLeftIcon,
+  ArrowRightIcon,
+} from '@heroicons/react/24/outline';
+import { CurrentSiteCard } from './components/CurrentSiteCard';
+import { CherryCmsCard } from './components/CherryCmsCard';
+import { DatabaseCard } from './components/DatabaseCard';
+import { ApiLayerCard } from './components/ApiLayerCard';
+import { NextJsFrontendCard } from './components/NextJsFrontendCard';
+import { SafetyNoteCard } from './components/SafetyNoteCard';
 
-export default function Home() {
+
+
+export default function CommercialProposal() {
+
+
+  const currentDate = new Date('19.03.2026').toLocaleDateString('ru-RU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const stages = [
+    {
+      id: 1,
+      title: "Анализ и Фронтенд",
+      color: "primary",
+      icon: <CodeBracketIcon className="w-5 h-5" />,
+      duration: "15-22 дня",
+      cost: "57 000 руб.",
+      result: "Полностью адаптивный frontend на Next.js с семантической разметкой и SEO-готовой структурой",
+      tasks: [
+        "Анализ текущего сайта mpk77.ru",
+        "Выгрузка контента и подготовка к переносу",
+        "Проектирование архитектуры Next.js приложения (App Router)",
+        "Верстка всех страниц с Tailwind CSS и семантическими тегами",
+        "Реализация ЧПУ-ссылок, мета-тегов, sitemap.xml, robots.txt",
+        "Настройка динамических маршрутов",
+        "Оптимизация Core Web Vitals: LCP, FID, CLS",
+        "Адаптивный дизайн под мобильные устройства",
+        "Подключение Google Fonts, иконок, медиа",
+        "Деплой на Vercel (preview-среда)"
+      ]
+    },
+    {
+      id: 2,
+      title: "Бэкенд и Интеграции",
+      color: "secondary",
+      icon: <ServerIcon className="w-5 h-5" />,
+      duration: "22-27 дней",
+      cost: "75 000 руб.",
+      result: "Готовый backend с интеграцией CRM, аналитики и автоматизации заявок",
+      tasks: [
+        "Проектирование базы данных (PostgreSQL) под бизнес-логику сайта",
+        "Разработка RESTful API на Strapi (Node.js сервер)",
+        "Интеграция с Roistat: Proxy Lead, передача заявок с UTM",
+        "Интеграция с amoCRM через Roistat API",
+        "Подключение Яндекс Метрики и Google Analytics 4",
+        "Email/SMS/WhatsApp уведомления о новых заявках",
+        "Тестирование интеграций и документирование API"
+      ]
+    },
+    {
+      id: 3,
+      title: "Финальная сборка, гарантия и поддержка",
+      color: "success",
+      icon: <ArrowsRightLeftIcon className="w-5 h-5" />,
+      duration: "7 дней + 7 лет*",
+      cost: "— руб.",
+      result: "Готовый сайт с гарантией и дальнейшей поддержкой",
+      tasks: [
+        "Финальное тестирование функциональности и производительности",
+        "Проверка корректности отслеживания в Roistat, GA4, Яндекс.Метрике",
+        "Оптимизация скорости загрузки (Core Web Vitals ≥ 90)",
+        "Передача исходных кодов в GitHub-репозиторий с полной документацией",
+        "Обучение: как обновлять контент через Strapi",
+        "Гарантия: бесплатное исправление ошибок в течение 7 лет*",
+        "Техническая поддержка: консультации по доработкам и интеграциям"
+      ]
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <RocketLaunchIcon className="w-6 h-6 text-yellow-500" />,
+      title: "Высокая производительность",
+      description: "Next.js обеспечивает быструю загрузку и отличный UX"
+    },
+    {
+      icon: <CheckCircleIcon className="w-6 h-6 text-green-500" />,
+      title: "Адаптивный дизайн",
+      description: "Корректное отображение на всех устройствах"
+    },
+    {
+      icon: <CodeBracketIcon className="w-6 h-6 text-blue-500" />,
+      title: "Масштабируемость",
+      description: "Легкое добавление новых функций и интеграций"
+    },
+    {
+      icon: <ServerIcon className="w-6 h-6 text-purple-500" />,
+      title: "Современная архитектура",
+      description: "Легкость поддержки и развития проекта"
+    }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        {/* Header */}
+        <Card className="mb-8 shadow-lg">
+          <CardBody className="p-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div>
+                <h1 className="text-3xl font-bold text-gray-800 mb-2">
+                  Коммерческое предложение
+                </h1>
+                <p className="text-gray-600">
+                  Перенос сайта mpk77.ru на современный стек технологий
+                </p>
+              </div>
+              <div className="text-right">
+                {currentDate && (
+                  <p className="text-sm text-gray-500">Дата: {currentDate}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="border-l-4 border-blue-500 pl-4 py-4 bg-blue-50 mt-6">
+              <p className="text-lg font-semibold text-gray-700">Здравствуйте!</p>
+              <p className="text-gray-600 mt-2">
+                Предлагаю следующий подход к реализации задачи переноса сайта на современный технологический стек:
+              </p>
+            </div>
+          </CardBody>
+        </Card>
+
+
+
+        {/* 🔹 БЛОК 1: Текущее состояние (без теней) */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            📊 Текущее состояние системы
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <CurrentSiteCard />      {/* licey.net: PHP 5.5, windows-1251 */}
+            <CherryCmsCard />        {/* Самописная CMS */}
+          </div>
+
+          <div className="mt-6">
+            <DatabaseCard />         {/* MySQL + возможные интеграции */}
+          </div>
+        </section>
+
+        {/* 🔹 БЛОК 2: Предлагаемое решение (с тенями, как в шаблоне) */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            🚀 Предлагаемое решение
+          </h2>
+
+          <div className="space-y-6">
+            <ApiLayerCard />         {/* Strapi/Express/FastAPI */}
+            <NextJsFrontendCard />   {/* Next.js 14 + Tailwind */}
+            <SafetyNoteCard />       {/* Разработка на копии БД */}
+          </div>
+        </section>
+
+
+        {/* Этапы работ */}
+        <div className="space-y-8 mb-12">
+          {stages.map((stage) => (
+            <Card key={stage.id} className="shadow-lg hover:shadow-xl transition-shadow">
+              <CardBody className="p-6">
+                <div className="flex flex-col items-start gap-1 sm:flex-row sm:gap-0 sm:items-center mb-6">
+                  <div className={`w-12 h-12 rounded-full bg-${stage.color}-100 flex items-center justify-center mr-4`}>
+                    <div className={`text-${stage.color}-600`}>
+                      {stage.icon}
+                    </div>
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-800">
+                      Этап {stage.id}: {stage.title}
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-700 mb-4">Состав работ:</h3>
+                    <ul className="space-y-3">
+                      {stage.tasks.map((task, taskIndex) => (
+                        <li key={taskIndex} className="flex items-start">
+                          <CheckCircleIcon className={`w-5 h-5 text-${stage.color}-500 mt-0.5 mr-3 flex-shrink-0`} />
+                          <span className="text-gray-600">{task}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={`bg-${stage.color}-50 rounded-lg p-6 flex flex-col justify-between h-full`}>
+                    <div className="text-center mb-4">
+                      <Chip
+                        color={stage.color as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+                        variant="flat"
+                        className="font-medium"
+                      >
+                        Результат этапа
+                      </Chip>
+                    </div>
+                    <p className="text-gray-700 text-center mb-6">
+                      {stage.result}
+                    </p>
+
+                    <Card className="bg-white">
+                      <CardBody className="p-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-medium text-gray-700">Сроки:</span>
+                          <span className="font-semibold text-gray-800">{stage.duration}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1 justify-between items-center">
+                          <span className="font-medium text-gray-700">Стоимость:</span>
+                          <span className="font-semibold text-gray-800">{stage.cost}</span>
+                        </div>
+                      </CardBody>
+                    </Card>
+                    {(stage.id === 1 || stage.id === 2) && (
+                      <div className="mt-4 text-center">
+                        <Link href={`/stage${stage.id}/`}>
+                          <Button
+                            color={stage.color as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+                            variant="flat"
+                            size="sm"
+                            className="w-full"
+                            endContent={<ArrowRightIcon className="w-4 h-4" />}
+                          >
+                            Подробнее
+                          </Button>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        {/* Итоговая стоимость */}
+        <Card className="mb-12 shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+          <CardBody className="p-8">
+            <h2 className="text-2xl font-bold mb-6 text-center">Итоговая стоимость проекта</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              <Card className="bg-white bg-opacity-20">
+                <CardBody className="p-4 text-center">
+                  <p className="text-sm opacity-90">Этап 1</p>
+                  <p className="text-2xl font-bold">57 000 ₽</p>
+                  <p className="text-sm opacity-90">15-22 дня</p>
+                </CardBody>
+              </Card>
+              <Card className="bg-white bg-opacity-20">
+                <CardBody className="p-4 text-center">
+                  <p className="text-sm opacity-90">Этап 2</p>
+                  <p className="text-2xl font-bold">75 000 ₽</p>
+                  <p className="text-sm opacity-90">22-27 дней</p>
+                </CardBody>
+              </Card>
+              <Card className="bg-white bg-opacity-20">
+                <CardBody className="p-4 text-center">
+                  <p className="text-sm opacity-90">Этап 3</p>
+                  <p className="text-2xl font-bold">-</p>
+                  <p className="text-sm opacity-90">7 дней + 7 лет поддержки</p>
+                </CardBody>
+              </Card>
+            </div>
+            <div className="pt-6 border-t border-white border-opacity-30 text-center">
+              <p className="text-xl font-bold">Общая стоимость: 132 000 ₽</p>
+              <p className="opacity-90 mt-2">Общий срок: 7–9 недель</p>
+            </div>
+          </CardBody>
+        </Card>
+
+        {/* Преимущества */}
+        <Card className="mb-8 shadow-lg">
+          <CardBody className="p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Преимущества нового решения
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                  <div className="mr-4 mt-1">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-800">{benefit.title}</h3>
+                    <p className="text-gray-600 text-sm mt-1">{benefit.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardBody>
+        </Card>
+
+        <Card className="shadow-lg">
+          <CardBody className="p-8 text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Готовы начать проект?
+            </h2>
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+              Для старта мне потребуются исходные материалы Вашего сайта с комментариями по функционалу каждой страницы.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button
+                color="success"
+                size="lg"
+                className="px-8"
+                onPress={() => window.open('https://t.me/ahim5722', '_blank')}
+                startContent={
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
+                  </svg>
+                }
+              >
+                Связаться
+              </Button>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
     </div>
   );
 }
+

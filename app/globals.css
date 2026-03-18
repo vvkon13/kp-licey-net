@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: #ffffff;
@@ -10,6 +14,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+    /* === Кастомные цвета для КП === */
+  
+  /* === Кастомные цвета для КП === */
+  
+  /* 🔸 Legacy (жёлтый — текущее состояние) */
+  --color-legacy-50: #fef3c7;
+  --color-legacy-100: #fde68a;
+  --color-legacy-200: #fcd34d;
+  --color-legacy-500: #f59e0b;
+  --color-legacy-700: #b45309;
+  --color-legacy-900: #78350f;
+
+  /* 🔸 Modern (синий — предлагаемое решение) */
+  --color-modern-50: #dbeafe;
+  --color-modern-100: #bfdbfe;
+  --color-modern-200: #93c5fd;
+  --color-modern-500: #3b82f6;
+  --color-modern-700: #1d4ed8;
+  --color-modern-900: #1e3a8a;
+
+  /* 🔸 Safe (зелёный — безопасность) */
+  --color-safe-50: #dcfce7;
+  --color-safe-100: #bbf7d0;
+  --color-safe-200: #86efac;
+  --color-safe-500: #22c55e;
+  --color-safe-700: #15803d;
+  --color-safe-900: #14532d;
 }
 
 @media (prefers-color-scheme: dark) {
