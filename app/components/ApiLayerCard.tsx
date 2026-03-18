@@ -5,7 +5,7 @@ import { Chip } from '@heroui/chip';
 
 export function ApiLayerCard() {
   return (
-    <Card className="shadow-lg border-l-4 border-modern-500 bg-modern-50">
+    <Card className="shadow-lg hover:shadow-xl transition-shadow bg-modern-50">
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-bold text-gray-800">🔌 API-слой (Strangler Fig Pattern)</h3>

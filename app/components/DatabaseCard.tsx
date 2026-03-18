@@ -49,7 +49,7 @@ export function DatabaseCard() {
   ];
 
   return (
-    <Card className="border-l-4 border-legacy-500 bg-legacy-50">
+    <Card className="bg-legacy-50">
       <CardBody className="p-6">
         <h3 className="text-lg font-bold text-gray-800 mb-4">💾 База данных</h3>
         

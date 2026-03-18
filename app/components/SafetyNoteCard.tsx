@@ -5,7 +5,7 @@ import { Chip } from '@heroui/chip';
 
 export function SafetyNoteCard() {
   return (
-    <Card className="border-l-4 border-safe-500 bg-safe-50">
+    <Card className="shadow-lg hover:shadow-xl transition-shadow bg-safe-50">
       <CardBody className="p-6">
         <div className="flex items-center gap-3 mb-3">
           <Chip color="success" variant="flat">🔐 Безопасно</Chip>
