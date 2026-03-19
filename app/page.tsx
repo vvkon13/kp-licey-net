@@ -41,7 +41,9 @@ export default function CommercialProposal() {
       color: "primary",
       icon: <MagnifyingGlassIcon className="w-5 h-5" />,
       duration: "5-7 дней",
-      cost: "22 000 руб.",
+      cost: "0 руб.",
+      originalCost: "22 000 руб.",
+      isFree: true,
       result: "Утверждённое ТЗ, карта данных, план миграции",
       tasks: [
         "Получение дампа базы данных (копия)",
@@ -58,8 +60,8 @@ export default function CommercialProposal() {
       description: "Разработка слоя данных: читаем из текущей БД, отдаём чистый JSON",
       color: "secondary",
       icon: <ServerIcon className="w-5 h-5" />,
-      duration: "2 - 3 недели",
-      cost: "57 000 руб.",
+      duration: "2-3 недели",
+      cost: "до 57 000 руб.",
       result: "Рабочий API с эндпоинтами: /api/products, /api/books/:id, /api/audio",
       tasks: [
         "Настройка подключения к копии БД (только чтение)",
@@ -76,8 +78,8 @@ export default function CommercialProposal() {
       description: "Современный интерфейс: быстро, адаптивно, с семантической вёрсткой",
       color: "success",
       icon: <CodeBracketIcon className="w-5 h-5" />,
-      duration: "2 - 3 недели",
-      cost: "57 000 руб.",
+      duration: "2-3 недели",
+      cost: "до 57 000 руб.",
       result: "Готовый фронтенд: каталог, карточка, корзина, онлайн-чтение",
       tasks: [
         "Проектирование архитектуры (App Router, компоненты)",
@@ -132,7 +134,7 @@ export default function CommercialProposal() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <Card className="mb-8 shadow-lg">
@@ -165,7 +167,7 @@ export default function CommercialProposal() {
 
 
         {/* 🔹 БЛОК 1: Текущее состояние (без теней) */}
-        <section className="mb-12">
+        <section className="mb-8">
           <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
             <PresentationChartBarIcon className="w-8 h-8 text-legacy-600 mr-2" />
             Текущее состояние и предлагаемое решение
@@ -203,12 +205,12 @@ export default function CommercialProposal() {
           </div>
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <CurrentSiteCard />      {/* licey.net: PHP 5.5, windows-1251 */}
             <CherryCmsCard />        {/* Самописная CMS */}
           </div>
 
-          <div className="mt-6 space-y-6">
+          <div className="mt-8 space-y-8">
             <DatabaseCard />         {/* MySQL + возможные интеграции */}
             <ApiLayerCard />         {/* Strapi/Express/FastAPI */}
             <NextJsFrontendCard />   {/* Next.js 14 + Tailwind */}
@@ -236,6 +238,9 @@ export default function CommercialProposal() {
                     <h2 className="text-2xl font-bold text-gray-800">
                       Этап {stage.id}: {stage.title}
                     </h2>
+                    {stage.description && (
+                      <p className="text-sm text-gray-600 mt-1">{stage.description}</p>
+                    )}
                   </div>
                 </div>
 
@@ -245,7 +250,7 @@ export default function CommercialProposal() {
                     <ul className="space-y-3">
                       {stage.tasks.map((task, taskIndex) => (
                         <li key={taskIndex} className="flex items-start">
-                          <CheckCircleIcon className={`w-5 h-5 text-${stage.color}-500 mt-0.5 mr-3 flex-shrink-0`} />
+                          <CheckCircleIcon className={`w-5 h-5 text-${stage.color}-500 mt-0.5 mr-3 shrink-0`} />
                           <span className="text-gray-600">{task}</span>
                         </li>
                       ))}
@@ -272,9 +277,23 @@ export default function CommercialProposal() {
                           <span className="font-medium text-gray-700">Сроки:</span>
                           <span className="font-semibold text-gray-800">{stage.duration}</span>
                         </div>
+                        {/* Внутри карточки этапа, где отображается стоимость */}
                         <div className="flex flex-wrap gap-1 justify-between items-center">
                           <span className="font-medium text-gray-700">Стоимость:</span>
-                          <span className="font-semibold text-gray-800">{stage.cost}</span>
+                          <div className="flex items-center gap-2">
+                            {stage.isFree ? (
+                              <>
+                                <span className="text-sm text-gray-400 line-through">{stage.originalCost}</span>
+                                <span className={`font-semibold text-${stage.color}-600`}>{stage.cost}</span>
+                                <Chip
+                                  size="sm"
+                                  color={stage.color as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+                                  variant="flat">Бесплатно</Chip>
+                              </>
+                            ) : (
+                              <span className="font-semibold text-gray-800">{stage.cost}</span>
+                            )}
+                          </div>
                         </div>
                       </CardBody>
                     </Card>
@@ -301,7 +320,7 @@ export default function CommercialProposal() {
         </div>
 
         {/* Итоговая стоимость */}
-        <Card className="mb-12 shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <Card className="mb-12 shadow-lg bg-linear-to-r from-blue-500 to-purple-600 text-white">
           <CardBody className="p-8">
             <h2 className="text-2xl font-bold mb-6 text-center">Итоговая стоимость проекта</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
