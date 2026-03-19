@@ -17,7 +17,7 @@ export function CherryCmsCard() {
   ];
 
   return (
-    <Card className={`bg-legacy-50 transition-opacity duration-300 ${isWarning ? 'opacity-60' : ''}`}>
+    <Card className={`bg-legacy-50 transition-color duration-300 ${isWarning ? 'bg-gray-50' : ''}`}>
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
@@ -38,9 +38,9 @@ export function CherryCmsCard() {
 
         {/* Warning при смене режима БД */}
         {isWarning && (
-          <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg flex items-start gap-2">
-            <ExclamationTriangleIcon className="w-4 h-4 text-yellow-600 flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-yellow-800">
+          <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
+            <ExclamationTriangleIcon className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+            <p className="text-xs text-red-800">
               {dbMode === 'upgrade' 
                 ? 'Возможны нарушения в работе админки — требуется тестирование'
                 : 'Самописная CMS может потребовать адаптации под новую БД'}
