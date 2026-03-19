@@ -13,7 +13,14 @@ import {
   ArrowRightIcon,
   MagnifyingGlassIcon,
   PresentationChartBarIcon,
-  ListBulletIcon
+  ListBulletIcon,
+  UserGroupIcon,
+  GiftIcon,
+  ChartBarIcon,
+  LinkIcon,
+  WrenchScrewdriverIcon,
+  BookOpenIcon
+
 } from '@heroicons/react/24/outline';
 import { CurrentSiteCard } from './components/CurrentSiteCard';
 import { CherryCmsCard } from './components/CherryCmsCard';
@@ -21,6 +28,7 @@ import { DatabaseCard } from './components/DatabaseCard';
 import { ApiLayerCard } from './components/ApiLayerCard';
 import { NextJsFrontendCard } from './components/NextJsFrontendCard';
 import { SafetyNoteCard } from './components/SafetyNoteCard';
+import { RoadmapCard } from './components/RoadmapCard';
 
 
 
@@ -109,6 +117,56 @@ export default function CommercialProposal() {
       ]
     }
   ];
+
+  // src/app/page.tsx — добавь после массива stages
+
+  const roadmap = {
+    id: 5,
+    title: "Roadmap: возможное развитие",
+    description: "Что можно добавить после запуска для роста бизнеса",
+    color: "secondary",
+    icon: <RocketLaunchIcon className="w-5 h-5" />,
+    duration: "По запросу",
+    isRoadmap: true,
+    result: "Масштабируемая платформа для роста продаж",
+    items: [
+      {
+        icon: <UserGroupIcon className="w-4 h-4" />,
+        title: "Личные кабинеты",
+        desc: "История заказов, избранное, отслеживание доставки, персональные настройки"
+      },
+      {
+        icon: <GiftIcon className="w-4 h-4" />,
+        title: "Бонусная система",
+        desc: "Накопительные баллы, ранги клиентов, автоматические персональные скидки"
+      },
+      {
+        icon: <ChartBarIcon className="w-4 h-4" />,
+        title: "Маркетинг",
+        desc: "Промокоды, рассылки, интеграция с соцсетями, SEO-продвижение"
+      },
+      {
+        icon: <LinkIcon className="w-4 h-4" />,
+        title: "Интеграции",
+        desc: "1С:Предприятие, службы доставки (СДЭК, Почта), платежные системы"
+      },
+      {
+        icon: <PresentationChartBarIcon className="w-4 h-4" />,
+        title: "Аналитика",
+        desc: "Дашборды продаж, A/B-тесты, воронки конверсии, поведенческие метрики"
+      },
+      {
+        icon: <WrenchScrewdriverIcon className="w-4 h-4" />,
+        title: "Поддержка",
+        desc: "Обновления, мониторинг, консультации по развитию, техническая помощь"
+      },
+      {
+        icon: <BookOpenIcon className="w-4 h-4" />,
+        title: "Онлайн-библиотека",
+        desc: "Прогресс чтения, закладки, офлайн-режим, рекомендации по интересам"
+      }
+    ]
+  };
 
   const benefits = [
     {
@@ -317,38 +375,53 @@ export default function CommercialProposal() {
               </CardBody>
             </Card>
           ))}
+
+          {/* Roadmap — отдельный рендер */}
+          <RoadmapCard
+            title={roadmap.title}
+            description={roadmap.description}
+            items={roadmap.items}
+            result={roadmap.result}
+          />
         </div>
 
         {/* Итоговая стоимость */}
         <Card className="mb-12 shadow-lg bg-linear-to-r from-blue-500 to-purple-600 text-white">
           <CardBody className="p-8">
             <h2 className="text-2xl font-bold mb-6 text-center">Итоговая стоимость проекта</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
               <Card className="bg-white bg-opacity-20">
                 <CardBody className="p-4 text-center">
                   <p className="text-sm opacity-90">Этап 1</p>
-                  <p className="text-2xl font-bold">57 000 ₽</p>
-                  <p className="text-sm opacity-90">15-22 дня</p>
+                  <p className="text-2xl font-bold">0 ₽</p>
+                  <p className="text-sm opacity-90">5-7 дней</p>
                 </CardBody>
               </Card>
               <Card className="bg-white bg-opacity-20">
                 <CardBody className="p-4 text-center">
                   <p className="text-sm opacity-90">Этап 2</p>
-                  <p className="text-2xl font-bold">75 000 ₽</p>
-                  <p className="text-sm opacity-90">22-27 дней</p>
+                  <p className="text-2xl font-bold">до 57 000 ₽</p>
+                  <p className="text-sm opacity-90">15-22 дня</p>
                 </CardBody>
               </Card>
               <Card className="bg-white bg-opacity-20">
                 <CardBody className="p-4 text-center">
                   <p className="text-sm opacity-90">Этап 3</p>
-                  <p className="text-2xl font-bold">-</p>
-                  <p className="text-sm opacity-90">7 дней + 7 лет поддержки</p>
+                  <p className="text-2xl font-bold">до 57 000 ₽</p>
+                  <p className="text-sm opacity-90">15-22 дня</p>
+                </CardBody>
+              </Card>
+              <Card className="bg-white bg-opacity-20">
+                <CardBody className="p-4 text-center">
+                  <p className="text-sm opacity-90">Этап 4</p>
+                  <p className="text-2xl font-bold">22 000 ₽</p>
+                  <p className="text-sm opacity-90">5-7 дней</p>
                 </CardBody>
               </Card>
             </div>
             <div className="pt-6 border-t border-white border-opacity-30 text-center">
-              <p className="text-xl font-bold">Общая стоимость: 132 000 ₽</p>
-              <p className="opacity-90 mt-2">Общий срок: 7–9 недель</p>
+              <p className="text-xl font-bold">Общая стоимость ~ 136 000 ₽</p>
+              <p className="opacity-90 mt-2">Общий срок ~ 5–7 недель</p>
             </div>
           </CardBody>
         </Card>
