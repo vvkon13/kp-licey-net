@@ -11,7 +11,7 @@ import {
   ServerIcon,
   ArrowsRightLeftIcon,
   ArrowRightIcon,
-  MagnifyingGlassIcon,  
+  MagnifyingGlassIcon,
   PresentationChartBarIcon,
   ListBulletIcon
 } from '@heroicons/react/24/outline';
@@ -36,55 +36,74 @@ export default function CommercialProposal() {
   const stages = [
     {
       id: 1,
-      title: "Аудит и подготовка",
+      title: "Анализ и ТЗ",
+      description: "Погружение в проект: изучаем код, БД, интеграции и бизнес-процессы",
       color: "primary",
       icon: <MagnifyingGlassIcon className="w-5 h-5" />,
-      duration: "3-5 дней",
-      cost: "15 000 руб.",
-      result: "Полная карта данных, структуры БД и списка интеграций",
+      duration: "5-7 дней",
+      cost: "22 000 руб.",
+      result: "Утверждённое ТЗ, карта данных, план миграции",
       tasks: [
         "Получение дампа базы данных (копия)",
         "Анализ структуры таблиц (products, categories, orders)",
         "Проверка кодировки (windows-1251 → UTF-8)",
         "Интервью с сотрудниками: какие интеграции используются",
         "Составление карты критичного функционала",
-        "План миграции данных и тестовые сценарии"
+        "Формирование и согласование ТЗ"
       ]
     },
     {
       id: 2,
-      title: "API-слой + Фронтенд (параллельно)",
+      title: "REST API сервер",
+      description: "Разработка слоя данных: читаем из текущей БД, отдаём чистый JSON",
       color: "secondary",
-      icon: <ArrowsRightLeftIcon className="w-5 h-5" />,
-      duration: "14-21 день",
-      cost: "95 000 руб.",
-      result: "Рабочий прототип: каталог, карточка, корзина на Next.js + API",
+      icon: <ServerIcon className="w-5 h-5" />,
+      duration: "2 - 3 недели",
+      cost: "57 000 руб.",
+      result: "Рабочий API с эндпоинтами: /api/products, /api/books/:id, /api/audio",
       tasks: [
         "Настройка подключения к копии БД (только чтение)",
-        "Разработка эндпоинтов: /api/products, /api/books/:id, /api/audio",
         "Конвертация windows-1251 → UTF-8 на уровне API",
-        "Верстка каталога (~550 книг) + онлайн-библиотеки (~200)",
-        "Реализация аудиоплеера и PDF-превью",
-        "Адаптивный дизайн, оптимизация Core Web Vitals",
-        "Деплой демо-версии на Vercel"
+        "Разработка эндпоинтов для каталога, карточек, аудио",
+        "Валидация и типизация ответов (OpenAPI/Swagger)",
+        "Тестирование API (Postman / автоматические тесты)",
+        "Документация для фронтенд-разработчика"
       ]
     },
     {
       id: 3,
-      title: "Интеграции, тесты, запуск",
+      title: "Фронтенд на Next.js",
+      description: "Современный интерфейс: быстро, адаптивно, с семантической вёрсткой",
       color: "success",
-      icon: <CheckCircleIcon className="w-5 h-5" />,
+      icon: <CodeBracketIcon className="w-5 h-5" />,
+      duration: "2 - 3 недели",
+      cost: "57 000 руб.",
+      result: "Готовый фронтенд: каталог, карточка, корзина, онлайн-чтение",
+      tasks: [
+        "Проектирование архитектуры (App Router, компоненты)",
+        "Верстка каталога (~550 книг) + онлайн-библиотеки (~200)",
+        "Реализация аудиоплеера и PDF-превью",
+        "Адаптивный дизайн, оптимизация Core Web Vitals",
+        "SEO: мета-теги, sitemap.xml, robots.txt, ЧПУ",
+        "Деплой демо-версии на Vercel"
+      ]
+    },
+    {
+      id: 4,
+      title: "Интеграции и запуск",
+      description: "Подключаем платежи, уведомления и переводим на продакшен",
+      color: "warning",
+      icon: <ArrowsRightLeftIcon className="w-5 h-5" />,
       duration: "5-7 дней",
       cost: "22 000 руб.",
-      result: "Готовый сайт на продакшене с гарантией",
+      result: "Рабочий сайт на продакшене с гарантией",
       tasks: [
         "Интеграция формы заказа с Робокассой",
         "Настройка email-уведомлений",
         "Тестирование критичных сценариев (заказ, оплата)",
         "Переключение Nginx на новый фронтенд",
         "Передача исходных кодов и документации",
-        "Гарантия: исправление ошибок в течение 3 месяцев",
-        "Консультации по дальнейшему развитию"
+        "Гарантия: исправление ошибок в течение 3 месяцев"
       ]
     }
   ];
@@ -149,14 +168,40 @@ export default function CommercialProposal() {
         <section className="mb-12">
           <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
             <PresentationChartBarIcon className="w-8 h-8 text-legacy-600 mr-2" />
-            Текущее состояние системы и предлагаемое решение
+            Текущее состояние и предлагаемое решение
           </h2>
-          <p>Нмже представлен обобщенный подход с постепенным переходом и на современный стек технологий и проектированием новой системы сразу, которые имеет свои плюсы и минус </p>
-          <p>Постпенный переход позволит запустить систему быстрее в том же самом формате, при проектирование новой системы легче заложить сразу новые возможности, например личные кабинеты пользователей</p>
-          <p>Самое главное, в основе этих подходов лежит современнай подход к разработке, а имеено:  </p>
-          <p>Создание отдельного REST API сервера (Headless CMS системы) </p>
-          <p>Создание независимого веб-приложения на базе фреймворка Next.js</p>
-          
+
+          <div className="bg-modern-50 rounded-lg p-5 mb-6 border border-modern-200">
+            <p className="text-gray-700 mb-3">
+              Сайт работает, но использует устаревшие технологии (PHP 5.5, jQuery, windows-1251),
+              что ограничивает развитие, безопасность и конверсию.
+            </p>
+
+            <p className="text-gray-700 mb-4">
+              <strong>Предлагаю два пути развития:</strong>
+            </p>
+
+            <ul className="space-y-2 text-sm text-gray-600 mb-4">
+              <li className="flex items-start">
+                <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 shrink-0" />
+                <span><strong>Эволюционный:</strong> постепенная замена фронтенда на Next.js, API-слой читает из текущей БД. Быстрый запуск, минимальные риски.</span>
+              </li>
+              <li className="flex items-start">
+                <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 shrink-0" />
+                <span><strong>Революционный:</strong> полная перепись на современном стеке (новая БД, чистая архитектура). Долгосрочная перспектива, больше инвестиций.</span>
+              </li>
+            </ul>
+
+            <p className="text-gray-700 font-medium">
+              Независимо от выбора, в основе лежит современный подход:
+            </p>
+            <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <li>• <strong>Headless API</strong> — отдельный REST-сервер для данных</li>
+              <li>• <strong>Next.js фронтенд</strong> — быстрое, адаптивное, SEO-готовое веб-приложение</li>
+              <li>• <strong>Изоляция слоёв</strong> — можно менять фронтенд, не затрагивая бэкенд, и наоборот</li>
+            </ul>
+          </div>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <CurrentSiteCard />      {/* licey.net: PHP 5.5, windows-1251 */}
@@ -174,7 +219,7 @@ export default function CommercialProposal() {
 
         {/* Этапы работ */}
         <div className="space-y-8 mb-12">
-                    <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
+          <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
             <ListBulletIcon className="w-8 h-8 text-legacy-600 mr-2" />
             Этапы работ
           </h2>
