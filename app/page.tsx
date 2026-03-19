@@ -11,6 +11,9 @@ import {
   ServerIcon,
   ArrowsRightLeftIcon,
   ArrowRightIcon,
+  MagnifyingGlassIcon,  
+  PresentationChartBarIcon,
+  ListBulletIcon
 } from '@heroicons/react/24/outline';
 import { CurrentSiteCard } from './components/CurrentSiteCard';
 import { CherryCmsCard } from './components/CherryCmsCard';
@@ -33,59 +36,55 @@ export default function CommercialProposal() {
   const stages = [
     {
       id: 1,
-      title: "Анализ и Фронтенд",
+      title: "Аудит и подготовка",
       color: "primary",
-      icon: <CodeBracketIcon className="w-5 h-5" />,
-      duration: "15-22 дня",
-      cost: "57 000 руб.",
-      result: "Полностью адаптивный frontend на Next.js с семантической разметкой и SEO-готовой структурой",
+      icon: <MagnifyingGlassIcon className="w-5 h-5" />,
+      duration: "3-5 дней",
+      cost: "15 000 руб.",
+      result: "Полная карта данных, структуры БД и списка интеграций",
       tasks: [
-        "Анализ текущего сайта mpk77.ru",
-        "Выгрузка контента и подготовка к переносу",
-        "Проектирование архитектуры Next.js приложения (App Router)",
-        "Верстка всех страниц с Tailwind CSS и семантическими тегами",
-        "Реализация ЧПУ-ссылок, мета-тегов, sitemap.xml, robots.txt",
-        "Настройка динамических маршрутов",
-        "Оптимизация Core Web Vitals: LCP, FID, CLS",
-        "Адаптивный дизайн под мобильные устройства",
-        "Подключение Google Fonts, иконок, медиа",
-        "Деплой на Vercel (preview-среда)"
+        "Получение дампа базы данных (копия)",
+        "Анализ структуры таблиц (products, categories, orders)",
+        "Проверка кодировки (windows-1251 → UTF-8)",
+        "Интервью с сотрудниками: какие интеграции используются",
+        "Составление карты критичного функционала",
+        "План миграции данных и тестовые сценарии"
       ]
     },
     {
       id: 2,
-      title: "Бэкенд и Интеграции",
+      title: "API-слой + Фронтенд (параллельно)",
       color: "secondary",
-      icon: <ServerIcon className="w-5 h-5" />,
-      duration: "22-27 дней",
-      cost: "75 000 руб.",
-      result: "Готовый backend с интеграцией CRM, аналитики и автоматизации заявок",
+      icon: <ArrowsRightLeftIcon className="w-5 h-5" />,
+      duration: "14-21 день",
+      cost: "95 000 руб.",
+      result: "Рабочий прототип: каталог, карточка, корзина на Next.js + API",
       tasks: [
-        "Проектирование базы данных (PostgreSQL) под бизнес-логику сайта",
-        "Разработка RESTful API на Strapi (Node.js сервер)",
-        "Интеграция с Roistat: Proxy Lead, передача заявок с UTM",
-        "Интеграция с amoCRM через Roistat API",
-        "Подключение Яндекс Метрики и Google Analytics 4",
-        "Email/SMS/WhatsApp уведомления о новых заявках",
-        "Тестирование интеграций и документирование API"
+        "Настройка подключения к копии БД (только чтение)",
+        "Разработка эндпоинтов: /api/products, /api/books/:id, /api/audio",
+        "Конвертация windows-1251 → UTF-8 на уровне API",
+        "Верстка каталога (~550 книг) + онлайн-библиотеки (~200)",
+        "Реализация аудиоплеера и PDF-превью",
+        "Адаптивный дизайн, оптимизация Core Web Vitals",
+        "Деплой демо-версии на Vercel"
       ]
     },
     {
       id: 3,
-      title: "Финальная сборка, гарантия и поддержка",
+      title: "Интеграции, тесты, запуск",
       color: "success",
-      icon: <ArrowsRightLeftIcon className="w-5 h-5" />,
-      duration: "7 дней + 7 лет*",
-      cost: "— руб.",
-      result: "Готовый сайт с гарантией и дальнейшей поддержкой",
+      icon: <CheckCircleIcon className="w-5 h-5" />,
+      duration: "5-7 дней",
+      cost: "22 000 руб.",
+      result: "Готовый сайт на продакшене с гарантией",
       tasks: [
-        "Финальное тестирование функциональности и производительности",
-        "Проверка корректности отслеживания в Roistat, GA4, Яндекс.Метрике",
-        "Оптимизация скорости загрузки (Core Web Vitals ≥ 90)",
-        "Передача исходных кодов в GitHub-репозиторий с полной документацией",
-        "Обучение: как обновлять контент через Strapi",
-        "Гарантия: бесплатное исправление ошибок в течение 7 лет*",
-        "Техническая поддержка: консультации по доработкам и интеграциям"
+        "Интеграция формы заказа с Робокассой",
+        "Настройка email-уведомлений",
+        "Тестирование критичных сценариев (заказ, оплата)",
+        "Переключение Nginx на новый фронтенд",
+        "Передача исходных кодов и документации",
+        "Гарантия: исправление ошибок в течение 3 месяцев",
+        "Консультации по дальнейшему развитию"
       ]
     }
   ];
@@ -148,9 +147,16 @@ export default function CommercialProposal() {
 
         {/* 🔹 БЛОК 1: Текущее состояние (без теней) */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            📊 Текущее состояние системы
+          <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
+            <PresentationChartBarIcon className="w-8 h-8 text-legacy-600 mr-2" />
+            Текущее состояние системы и предлагаемое решение
           </h2>
+          <p>Нмже представлен обобщенный подход с постепенным переходом и на современный стек технологий и проектированием новой системы сразу, которые имеет свои плюсы и минус </p>
+          <p>Постпенный переход позволит запустить систему быстрее в том же самом формате, при проектирование новой системы легче заложить сразу новые возможности, например личные кабинеты пользователей</p>
+          <p>Самое главное, в основе этих подходов лежит современнай подход к разработке, а имеено:  </p>
+          <p>Создание отдельного REST API сервера (Headless CMS системы) </p>
+          <p>Создание независимого веб-приложения на базе фреймворка Next.js</p>
+          
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <CurrentSiteCard />      {/* licey.net: PHP 5.5, windows-1251 */}
@@ -164,9 +170,10 @@ export default function CommercialProposal() {
 
         {/* 🔹 БЛОК 2: Предлагаемое решение (с тенями, как в шаблоне) */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            🚀 Предлагаемое решение
-          </h2>
+          {/* <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
+            <BuildingOffice2Icon className="w-8 h-8 text-legacy-600 mr-2" />
+            Предлагаемое решение
+          </h2> */}
 
           <div className="space-y-6">
             <ApiLayerCard />         {/* Strapi/Express/FastAPI */}
@@ -178,6 +185,10 @@ export default function CommercialProposal() {
 
         {/* Этапы работ */}
         <div className="space-y-8 mb-12">
+                    <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
+            <ListBulletIcon className="w-8 h-8 text-legacy-600 mr-2" />
+            Этапы работ
+          </h2>
           {stages.map((stage) => (
             <Card key={stage.id} className="shadow-lg hover:shadow-xl transition-shadow">
               <CardBody className="p-6">

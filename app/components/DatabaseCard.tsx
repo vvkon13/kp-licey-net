@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { Card, CardBody } from '@heroui/card';
 import { Chip } from '@heroui/chip';
+import { CircleStackIcon, CheckCircleIcon, LinkIcon } from '@heroicons/react/24/outline';
 
 export function DatabaseCard() {
   const [activeTab, setActiveTab] = useState('current');
@@ -48,10 +49,19 @@ export function DatabaseCard() {
     },
   ];
 
+  const integrations = [
+    { name: "Робокасса (оплата)", status: "✅ подтверждено" },
+    { name: "Email-уведомления", status: "✅ вероятно" },
+    { name: "1С:Предприятие", status: "⚠️ требует проверки" },
+  ];
+
   return (
     <Card className="bg-legacy-50">
       <CardBody className="p-6">
-        <h3 className="text-lg font-bold text-gray-800 mb-4">💾 База данных</h3>
+        <div className="flex items-center gap-2 mb-4">
+          <CircleStackIcon className="w-5 h-5 text-legacy-600" />
+          <h3 className="text-lg font-bold text-gray-800">База данных</h3>
+        </div>
         
         <div className="flex gap-4">
           {/* Вертикальные табы */}
@@ -77,13 +87,19 @@ export function DatabaseCard() {
           </div>
         </div>
         
-        <div className="mt-4 p-3 bg-legacy-50 rounded border border-legacy-200">
-          <p className="text-xs text-gray-600">
-            <span className="font-medium">🔗 Возможные интеграции (требует уточнения):</span><br/>
-            • Робокасса (оплата) — ✅ подтверждено<br/>
-            • Email-уведомления — ✅ вероятно<br/>
-            • 1С:Предприятие — ⚠️ требует проверки
-          </p>
+        <div className="mt-4 p-3 bg-legacy-50 rounded">
+          <div className="flex items-center gap-2 mb-2">
+            <LinkIcon className="w-4 h-4 text-legacy-600" />
+            <p className="text-xs font-medium text-gray-700">Возможные интеграции:</p>
+          </div>
+          <ul className="space-y-1">
+            {integrations.map((item, index) => (
+              <li key={index} className="flex items-start text-xs text-gray-600">
+                <CheckCircleIcon className="w-3 h-3 text-legacy-500 mt-0.5 mr-2 flex-shrink-0" />
+                <span>{item.name} — <span className="font-medium">{item.status}</span></span>
+              </li>
+            ))}
+          </ul>
         </div>
         
         <p className="text-xs text-gray-500 mt-3 italic">

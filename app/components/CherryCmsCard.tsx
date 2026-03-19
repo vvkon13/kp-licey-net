@@ -1,22 +1,35 @@
 // components/Proposal/CherryCmsCard.tsx
-"use client"
+"use client";
 import { Card, CardBody } from '@heroui/card';
 import { Chip } from '@heroui/chip';
+import { CogIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export function CherryCmsCard() {
+  const items = [
+    "Разработчик: cherepkova.ru",
+    "Нет публичной документации",
+    "Менеджеры работают в привычном интерфейсе",
+    "Ввод товаров, управление заказами",
+  ];
+
   return (
     <Card className="bg-legacy-50">
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-gray-800">⚙️ CherryCMS</h3>
+          <div className="flex items-center gap-2">
+            <CogIcon className="w-5 h-5 text-legacy-600" />
+            <h3 className="text-lg font-bold text-gray-800">CherryCMS</h3>
+          </div>
           <Chip color="warning" variant="flat">Самописная</Chip>
         </div>
         
-        <ul className="space-y-2 text-gray-600 text-sm">
-          <li>• Разработчик: cherepkova.ru</li>
-          <li>• Нет публичной документации</li>
-          <li>• Менеджеры работают в привычном интерфейсе</li>
-          <li>• Ввод товаров, управление заказами</li>
+        <ul className="space-y-2">
+          {items.map((item, index) => (
+            <li key={index} className="flex items-start text-sm text-gray-600">
+              <CheckCircleIcon className="w-4 h-4 text-legacy-500 mt-0.5 mr-2 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
         </ul>
         
         <p className="text-xs text-gray-500 mt-4 italic">
