@@ -2,7 +2,7 @@
 "use client";
 import { Card, CardBody } from '@heroui/card';
 import { Chip } from '@heroui/chip';
-import { RocketLaunchIcon, CheckCircleIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
+import { RocketLaunchIcon, CheckCircleIcon, DevicePhoneMobileIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
 export function NextJsFrontendCard() {
   const metrics = [
@@ -32,7 +32,8 @@ export function NextJsFrontendCard() {
         </div>
         
         <p className="text-gray-600 mb-4 text-lg font-semibold">
-          Frontend на Next.js. Тот же функционал, но на современном стеке. Подход: «Lift-and-Shift» — перенос без потери логики.
+          Frontend на Next.js. Тот же функционал, но на современном стеке. 
+          Подход: «Lift-and-Shift» — перенос без потери логики + архитектура, готовая к любым расширениям.
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
@@ -52,6 +53,12 @@ export function NextJsFrontendCard() {
             </li>
           ))}
         </ul>
+
+        {/* Футер про масштабируемость */}
+        <p className="text-xs text-gray-500 mt-4 italic flex items-center gap-1">
+          <LightBulbIcon className="w-3 h-3 text-amber-500" />
+          Масштабируемость: от простого каталога до полноценной платформы — без ограничений
+        </p>
       </CardBody>
     </Card>
   );

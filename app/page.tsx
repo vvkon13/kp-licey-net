@@ -478,7 +478,7 @@ export default function CommercialProposal() {
               Готовы начать проект?
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Для старта мне потребуются исходные материалы Вашего сайта с комментариями по функционалу каждой страницы.
+                Для старта мне потребуются исходные материалы сайта и информация о текущих интеграциях для проведения аудита.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
