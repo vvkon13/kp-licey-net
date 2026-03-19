@@ -22,13 +22,13 @@ import {
   BookOpenIcon,
 
 } from '@heroicons/react/24/outline';
-import { CurrentSiteCard } from './components/CurrentSiteCard';
-import { CherryCmsCard } from './components/CherryCmsCard';
-import { DatabaseCard } from './components/DatabaseCard';
-import { ApiLayerCard } from './components/ApiLayerCard';
-import { NextJsFrontendCard } from './components/NextJsFrontendCard';
-import { SafetyNoteCard } from './components/SafetyNoteCard';
-import { RoadmapCard } from './components/RoadmapCard';
+import { CurrentSiteCard } from '../components/CurrentSiteCard';
+import { CherryCmsCard } from '../components/CherryCmsCard';
+import { DatabaseCard } from '../components/DatabaseCard';
+import { ApiLayerCard } from '../components/ApiLayerCard';
+import { NextJsFrontendCard } from '../components/NextJsFrontendCard';
+import { SafetyNoteCard } from '../components/SafetyNoteCard';
+import { RoadmapCard } from '../components/RoadmapCard';
 
 
 
