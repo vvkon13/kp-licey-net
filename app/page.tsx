@@ -20,7 +20,6 @@ import {
   LinkIcon,
   WrenchScrewdriverIcon,
   BookOpenIcon,
-  ArrowTopRightOnSquareIcon
 
 } from '@heroicons/react/24/outline';
 import { CurrentSiteCard } from './components/CurrentSiteCard';
@@ -379,11 +378,11 @@ export default function CommercialProposal() {
                         </div>
                       </CardBody>
                     </Card>
-                    {(stage.id === 1 || stage.id === 2) && (
+                    {(stage.id === 2 || stage.id === 3) && (
                       <div className="mt-4 text-center">
-                        <Link href={`/stage${stage.id}/`}>
+                        <Link href="/stage2-3">
                           <Button
-                            color={stage.color as any} // eslint-disable-line @typescript-eslint/no-explicit-any
+                            color={stage.color as any}
                             variant="flat"
                             size="sm"
                             className="w-full"
@@ -478,7 +477,7 @@ export default function CommercialProposal() {
               Готовы начать проект?
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Для старта мне потребуются исходные материалы сайта и информация о текущих интеграциях для проведения аудита.
+              Для старта мне потребуются исходные материалы сайта и информация о текущих интеграциях для проведения аудита.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
