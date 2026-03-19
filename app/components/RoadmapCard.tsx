@@ -5,11 +5,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardBody } from '@heroui/card';
 import { Chip } from '@heroui/chip';
-import { 
-  RocketLaunchIcon, 
-  CheckCircleIcon, 
+import {
+  RocketLaunchIcon,
+  CheckCircleIcon,
   LightBulbIcon,
-  ChevronDownIcon 
+  ChevronDownIcon
 } from '@heroicons/react/24/outline';
 
 interface RoadmapItem {
@@ -66,14 +66,12 @@ export function RoadmapCard({ title, description, items, result }: RoadmapCardPr
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className={`shrink-0 transition-colors duration-200 ${
-                      isHovered || isOpen ? 'text-secondary-600' : 'text-secondary-500'
-                    }`}>
+                    <div className={`shrink-0 transition-colors duration-200 ${isHovered || isOpen ? 'text-secondary-600' : 'text-secondary-500'
+                      }`}>
                       {item.icon}
                     </div>
-                    <span className={`text-sm font-medium truncate transition-colors duration-200 ${
-                      isHovered || isOpen ? 'text-gray-900' : 'text-gray-700'
-                    }`}>
+                    <span className={`text-sm font-medium truncate transition-colors duration-200 ${isHovered || isOpen ? 'text-gray-900' : 'text-gray-700'
+                      }`}>
                       {item.title}
                     </span>
                   </div>
@@ -82,9 +80,8 @@ export function RoadmapCard({ title, description, items, result }: RoadmapCardPr
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className={`shrink-0 w-5 h-5 flex items-center justify-center transition-colors duration-200 ${
-                      isHovered || isOpen ? 'text-secondary-600' : 'text-gray-400'
-                    }`}
+                    className={`shrink-0 w-5 h-5 flex items-center justify-center transition-colors duration-200 ${isHovered || isOpen ? 'text-secondary-600' : 'text-gray-400'
+                      }`}
                   >
                     <ChevronDownIcon className="w-4 h-4" />
                   </motion.div>
@@ -123,7 +120,7 @@ export function RoadmapCard({ title, description, items, result }: RoadmapCardPr
 
         {/* Примечание */}
         <p className="inline-flex items-center gap-1 text-xs text-gray-500 mt-4 italic">
-          <LightBulbIcon className='text-amber-500 w-3 h-3' /> 
+          <LightBulbIcon className='text-amber-500 w-3 h-3' />
           Эти этапы обсуждаются отдельно после запуска базовой версии
         </p>
       </CardBody>

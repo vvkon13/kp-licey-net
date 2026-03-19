@@ -13,8 +13,8 @@ export function CurrentSiteCard() {
     "PHP 5.5.37 (устарел с 2016)",
     "Кодировка: windows-1251",
     "jQuery 1.11.2 + статический фронтенд",
-    "Нет адаптивности под мобильные",
-    "PageSpeed: ~35/100 Desktop, ~25/100 Mobile",
+    "Мобильная версия: работает, но требует улучшения UX",
+    "PageSpeed: ~63/100 Mobile",
   ];
 
   return (

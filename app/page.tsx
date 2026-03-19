@@ -19,7 +19,8 @@ import {
   ChartBarIcon,
   LinkIcon,
   WrenchScrewdriverIcon,
-  BookOpenIcon
+  BookOpenIcon,
+  ArrowTopRightOnSquareIcon
 
 } from '@heroicons/react/24/outline';
 import { CurrentSiteCard } from './components/CurrentSiteCard';
@@ -29,14 +30,13 @@ import { ApiLayerCard } from './components/ApiLayerCard';
 import { NextJsFrontendCard } from './components/NextJsFrontendCard';
 import { SafetyNoteCard } from './components/SafetyNoteCard';
 import { RoadmapCard } from './components/RoadmapCard';
-import { FadeIn, FadeInStagger } from './components/FadeIn';
 
 
 
 export default function CommercialProposal() {
 
 
-  const currentDate = new Date('19.03.2026').toLocaleDateString('ru-RU', {
+  const currentDate = new Date(2026, 2, 20).toLocaleDateString('ru-RU', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -204,7 +204,16 @@ export default function CommercialProposal() {
                   Коммерческое предложение
                 </h1>
                 <p className="text-gray-600">
-                  Перенос сайта mpk77.ru на современный стек технологий
+                  Перенос сайта{' '}
+                  <Link
+                    href="https://licey.net"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 font-medium border-b-2 border-green-500 hover:border-green-700 hover:text-green-700 transition-colors duration-200"
+                  >
+                    licey.net
+                  </Link>{' '}
+                  на современный стек технологий
                 </p>
               </div>
               <div className="text-right">
@@ -245,11 +254,25 @@ export default function CommercialProposal() {
             <ul className="space-y-2 text-sm text-gray-600 mb-4">
               <li className="flex items-start">
                 <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 shrink-0" />
-                <span><strong>Эволюционный:</strong> постепенная замена фронтенда на Next.js, API-слой читает из текущей БД. Быстрый запуск, минимальные риски.</span>
+                <span className="flex items-center flex-wrap gap-2">
+                  <strong>Strangler Fig Pattern</strong>
+                  <Chip size="sm" variant="flat" color="primary">Постепенно</Chip>
+                  <span className="text-gray-600">
+                    Постепенная замена фронтенда на Next.js, API-слой читает из текущей БД.
+                    Быстрый запуск, минимальные риски.
+                  </span>
+                </span>
               </li>
               <li className="flex items-start">
                 <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 shrink-0" />
-                <span><strong>Революционный:</strong> полная перепись на современном стеке (новая БД, чистая архитектура). Долгосрочная перспектива, больше инвестиций.</span>
+                <span className="flex items-center flex-wrap gap-2">
+                  <strong>Big Bang</strong>
+                  <Chip size="sm" variant="flat" color="primary">Сразу</Chip>
+                  <span className="text-gray-600">
+                    Полная перепись на современном стеке (новая БД, чистая архитектура).
+                    Можно сразу заложить новые возможности: личные кабинеты, бонусная система, интеграции.
+                  </span>
+                </span>
               </li>
             </ul>
 
