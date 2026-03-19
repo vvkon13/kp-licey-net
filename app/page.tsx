@@ -29,6 +29,7 @@ import { ApiLayerCard } from './components/ApiLayerCard';
 import { NextJsFrontendCard } from './components/NextJsFrontendCard';
 import { SafetyNoteCard } from './components/SafetyNoteCard';
 import { RoadmapCard } from './components/RoadmapCard';
+import { FadeIn, FadeInStagger } from './components/FadeIn';
 
 
 
@@ -270,7 +271,7 @@ export default function CommercialProposal() {
 
           <div className="mt-8 space-y-8">
             <DatabaseCard />         {/* MySQL + возможные интеграции */}
-            <ApiLayerCard />         {/* Strapi/Express/FastAPI */}
+            <ApiLayerCard />
             <NextJsFrontendCard />   {/* Next.js 14 + Tailwind */}
             <SafetyNoteCard />       {/* Разработка на копии БД */}
           </div>

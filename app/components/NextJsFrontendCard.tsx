@@ -47,7 +47,7 @@ export function NextJsFrontendCard() {
         <ul className="space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start text-sm text-gray-600">
-              <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 flex-shrink-0" />
+              <CheckCircleIcon className="w-4 h-4 text-modern-500 mt-0.5 mr-2 shrink-0" />
               <span>{feature}</span>
             </li>
           ))}

@@ -31,7 +31,7 @@ export function CurrentSiteCard() {
         <ul className="space-y-2">
           {items.map((item, index) => (
             <li key={index} className="flex items-start text-sm text-gray-600">
-              <CheckCircleIcon className="w-4 h-4 text-legacy-500 mt-0.5 mr-2 flex-shrink-0" />
+              <CheckCircleIcon className="w-4 h-4 text-legacy-500 mt-0.5 mr-2 shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -40,7 +40,7 @@ export function CurrentSiteCard() {
         {/* Warning при смене режима БД */}
         {isWarning && (
           <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start gap-2">
-            <ExclamationTriangleIcon className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+            <ExclamationTriangleIcon className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
             <p className="text-xs text-red-800">
               При миграции БД потребуется тестирование и возможна доработка кода сайта
             </p>
