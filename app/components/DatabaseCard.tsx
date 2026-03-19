@@ -11,7 +11,8 @@ import {
   XCircleIcon,
   ArrowPathIcon,
   ArrowUpCircleIcon,
-  ArrowRightCircleIcon
+  ArrowRightCircleIcon,
+  ArrowDownIcon
 } from '@heroicons/react/24/outline';
 import { useDatabaseMigration, DbMode } from '@/contexts/DatabaseMigrationContext';
 
@@ -92,19 +93,19 @@ export function DatabaseCard() {
     <Card className="bg-legacy-50">
       <CardBody className="p-6">
         <div className="flex items-center gap-2 mb-4">
-          <CircleStackIcon className="w-5 h-5 text-legacy-600" />
-          <h3 className="text-lg font-bold text-gray-800">База данных</h3>
+          <CircleStackIcon className="w-12 h-12 text-legacy-600" />
+          <h3 className="text-2xl font-bold text-gray-800">База данных</h3>
         </div>
 
         {/* Вертикальные табы (десктоп, от sm) */}
-        <div className="hidden sm:flex gap-4">
+        <div className="hidden sm:flex gap-4 mb-4">
           <div className="flex flex-col gap-2 border-r pr-4">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setDbMode(tab.id)}
-                className={`text-left px-3 py-2 rounded-lg transition-colors text-sm ${dbMode === tab.id
-                  ? 'bg-modern-100 text-modern-700 font-medium'
+                className={`text-left px-3 py-2 rounded-lg transition-colors text-sm cursor-pointer ${dbMode === tab.id
+                  ? 'bg-legacy-100 text-legacy-700 font-medium'
                   : 'text-gray-600 hover:bg-gray-100'
                   }`}
               >
@@ -119,7 +120,7 @@ export function DatabaseCard() {
           </div>
         </div>
 
-        <div className="sm:hidden">
+        <div className="sm:hidden mb-4">
           {/* Горизонтальные табы (мобильные, до sm) */}
           <div className="flex gap-1 overflow-x-auto pb-2 mb-4 scrollbar-hide">
             {tabs.map((tab) => {
@@ -137,7 +138,7 @@ export function DatabaseCard() {
                   className={`
           shrink-0 px-2 py-1 rounded-lg transition-colors text-xs sm:text-sm whitespace-nowrap
           ${dbMode === tab.id
-                      ? 'bg-modern-100 text-modern-700 font-medium'
+                      ? 'bg-legacy-100 text-legacy-700 font-medium'
                       : 'text-gray-600 hover:bg-gray-100'
                     }
         `}
@@ -158,7 +159,7 @@ export function DatabaseCard() {
         </div>
 
         {/* Интеграции */}
-        <div className="mt-6 p-4 bg-legacy-50 rounded-lg">
+        <div className="mt-4 p-4 bg-legacy-50 rounded-lg border-t border-legacy-200">
           <div className="flex items-center gap-2 mb-3">
             <LinkIcon className="w-4 h-4 text-legacy-600" />
             <p className="text-sm font-medium text-gray-700">Возможные интеграции:</p>
@@ -200,6 +201,10 @@ export function DatabaseCard() {
           <ArrowPathIcon className="w-3 h-3" />
           Решение о миграции БД принимается ТОЛЬКО после аудита текущих интеграций
         </p>
+        {/* Стрелка,*/}
+        <div className="absolute bottom-4 right-4 text-primary-400">
+          <ArrowDownIcon className="w-5 h-5 animate-bounce" />
+        </div>
       </CardBody>
     </Card>
   );

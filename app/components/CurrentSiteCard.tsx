@@ -22,8 +22,8 @@ export function CurrentSiteCard() {
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <ComputerDesktopIcon className="w-5 h-5 text-legacy-600" />
-            <h3 className="text-lg font-bold text-gray-800">Текущий сайт</h3>
+            <ComputerDesktopIcon className="w-12 h-12 text-legacy-600" />
+            <h3 className="text-2xl font-bold text-gray-800">Текущий сайт</h3>
           </div>
           <Chip color="warning" variant="flat">Legacy</Chip>
         </div>

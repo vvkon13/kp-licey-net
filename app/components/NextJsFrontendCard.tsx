@@ -2,7 +2,7 @@
 "use client";
 import { Card, CardBody } from '@heroui/card';
 import { Chip } from '@heroui/chip';
-import { RocketLaunchIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { RocketLaunchIcon, CheckCircleIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 
 export function NextJsFrontendCard() {
   const metrics = [
@@ -25,14 +25,14 @@ export function NextJsFrontendCard() {
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <RocketLaunchIcon className="w-5 h-5 text-modern-600" />
-            <h3 className="text-lg font-bold text-gray-800">Frontend на Next.js 14</h3>
+            <DevicePhoneMobileIcon className="w-12 h-12 text-modern-600" />
+            <h3 className="text-2xl font-bold text-gray-800">Новый сайт</h3>
           </div>
           <Chip color="primary" variant="flat">Новое</Chip>
         </div>
         
-        <p className="text-gray-600 mb-4 text-sm">
-          Тот же функционал, но на современном стеке. Подход: «Lift-and-Shift» — перенос без потери логики.
+        <p className="text-gray-600 mb-4 text-lg font-semibold">
+          Frontend на Next.js. Тот же функционал, но на современном стеке. Подход: «Lift-and-Shift» — перенос без потери логики.
         </p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">

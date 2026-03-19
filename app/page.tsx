@@ -158,24 +158,13 @@ export default function CommercialProposal() {
           <p>Создание независимого веб-приложения на базе фреймворка Next.js</p>
           
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <CurrentSiteCard />      {/* licey.net: PHP 5.5, windows-1251 */}
             <CherryCmsCard />        {/* Самописная CMS */}
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 space-y-6">
             <DatabaseCard />         {/* MySQL + возможные интеграции */}
-          </div>
-        </section>
-
-        {/* 🔹 БЛОК 2: Предлагаемое решение (с тенями, как в шаблоне) */}
-        <section className="mb-12">
-          {/* <h2 className="inline-flex items-center text-2xl font-bold text-gray-800 mb-6">
-            <BuildingOffice2Icon className="w-8 h-8 text-legacy-600 mr-2" />
-            Предлагаемое решение
-          </h2> */}
-
-          <div className="space-y-6">
             <ApiLayerCard />         {/* Strapi/Express/FastAPI */}
             <NextJsFrontendCard />   {/* Next.js 14 + Tailwind */}
             <SafetyNoteCard />       {/* Разработка на копии БД */}

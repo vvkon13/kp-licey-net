@@ -21,8 +21,8 @@ export function CherryCmsCard() {
       <CardBody className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <CogIcon className="w-5 h-5 text-legacy-600" />
-            <h3 className="text-lg font-bold text-gray-800">CherryCMS</h3>
+            <CogIcon className="w-12 h-12 text-legacy-600" />
+            <h3 className="text-2xl font-bold text-gray-800">CherryCMS</h3>
           </div>
           <Chip color="warning" variant="flat">Самописная</Chip>
         </div>
@@ -49,7 +49,7 @@ export function CherryCmsCard() {
         )}
         
         <p className="text-xs text-gray-500 mt-4 italic">
-          ✅ Предлагаем не трогать админку на старте — сотрудники продолжают работать как привыкли
+          Предлагаем не трогать админку на старте — сотрудники продолжают работать как привыкли
         </p>
 
         {/* Стрелка-связь */}
