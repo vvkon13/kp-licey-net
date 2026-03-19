@@ -13,8 +13,10 @@ export function CurrentSiteCard() {
     "PHP 5.5.37 (устарел с 2016)",
     "Кодировка: windows-1251",
     "jQuery 1.11.2 + статический фронтенд",
-    "Мобильная версия: работает, но требует улучшения UX",
     "PageSpeed: ~63/100 Mobile",
+    "Мобильная версия: работает, но требует улучшения UX",
+    "Стабильная работа без сбоев, контент актуален, каталог наполнен",
+    "Все интеграции (Робокасса, уведомления) функционируют"
   ];
 
   return (
@@ -27,7 +29,7 @@ export function CurrentSiteCard() {
           </div>
           <Chip color="warning" variant="flat">Legacy</Chip>
         </div>
-        
+
         <ul className="space-y-2">
           {items.map((item, index) => (
             <li key={index} className="flex items-start text-sm text-gray-600">
@@ -46,7 +48,7 @@ export function CurrentSiteCard() {
             </p>
           </div>
         )}
-        
+
         <p className="text-xs text-gray-500 mt-4 italic">
           Сайт работает, но требует модернизации для безопасности и конверсии
         </p>
