@@ -23,7 +23,7 @@ export function CherryCmsCard() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <CogIcon className="w-12 h-12 text-legacy-600" />
-            <h3 className="text-2xl font-bold text-gray-800">CherryCMS</h3>
+            <h3 className="text-2xl font-bold text-gray-800">Cherry CMS</h3>
           </div>
           <Chip color="warning" variant="flat">Самописная</Chip>
         </div>
