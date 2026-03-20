@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     description: 'Перенос сайта на современный стек: Next.js + Headless API. Быстро, безопасно, с возможностью масштабирования.',
     type: 'website',
     locale: 'ru_RU',
-    url: 'https://тво-домен-или-версел-линк.vercel.app',
-    siteName: 'commercial proposal for the modernization of the licey.net website',
+    url: 'https://cp-licey-net.vercel.app/',
+    siteName: 'Next.js & Headless API',
     images: [
       {
-        url: '/og-proposal.png',
+        url: 'https://cp-licey-net.vercel.app/og-proposal.png',
         width: 1200,
         height: 630,
         alt: 'Коммерческое предложение: модернизация licey.net',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Коммерческое предложение — Модернизация licey.net',
     description: 'Перенос сайта на современный стек: Next.js + Headless API',
-    images: ['/og-proposal.jpg'],
+    images: ['https://cp-licey-net.vercel.app/og-proposal.png'],
   },
 };
 
