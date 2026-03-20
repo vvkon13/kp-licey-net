@@ -50,7 +50,7 @@ export default function CommercialProposal() {
       icon: <MagnifyingGlassIcon className="w-5 h-5" />,
       duration: "5-7 дней",
       cost: "0 руб.",
-      originalCost: "22 000 руб.",
+      originalCost: "22 000",
       isFree: true,
       result: "Утверждённое ТЗ, карта данных, план миграции",
       tasks: [
@@ -69,7 +69,7 @@ export default function CommercialProposal() {
       color: "secondary",
       icon: <ServerIcon className="w-5 h-5" />,
       duration: "2-3 недели",
-      cost: "до 57 000 руб.",
+      cost: "57 000 руб.",
       result: "Рабочий API с эндпоинтами: /api/products, /api/books/:id, /api/audio",
       tasks: [
         "Настройка подключения к копии БД (только чтение)",
@@ -87,7 +87,7 @@ export default function CommercialProposal() {
       color: "success",
       icon: <CodeBracketIcon className="w-5 h-5" />,
       duration: "2-3 недели",
-      cost: "до 57 000 руб.",
+      cost: "57 000 руб.",
       result: "Готовый фронтенд: каталог, карточка, корзина, онлайн-чтение",
       tasks: [
         "Проектирование архитектуры (App Router, компоненты)",
@@ -423,14 +423,14 @@ export default function CommercialProposal() {
               <Card className="bg-white bg-opacity-20">
                 <CardBody className="p-4 text-center">
                   <p className="text-sm opacity-90">Этап 2</p>
-                  <p className="text-2xl font-bold">до 57 000 ₽</p>
+                  <p className="text-2xl font-bold">57 000 ₽</p>
                   <p className="text-sm opacity-90">15-22 дня</p>
                 </CardBody>
               </Card>
               <Card className="bg-white bg-opacity-20">
                 <CardBody className="p-4 text-center">
                   <p className="text-sm opacity-90">Этап 3</p>
-                  <p className="text-2xl font-bold">до 57 000 ₽</p>
+                  <p className="text-2xl font-bold">57 000 ₽</p>
                   <p className="text-sm opacity-90">15-22 дня</p>
                 </CardBody>
               </Card>

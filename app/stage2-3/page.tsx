@@ -197,7 +197,7 @@ function LayersView() {
         <div className="space-y-6">
             <Card className="shadow-lg">
                 <CardBody className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">🔹 REST API сервер (57 000 ₽)</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">REST API сервер</h3>
                     <ul className="space-y-2 text-sm text-gray-600">
                         <li className="flex items-start">
                             <CheckCircleIcon className="w-3 h-3 text-secondary-500 mt-0.5 mr-2 shrink-0" />
@@ -217,7 +217,7 @@ function LayersView() {
 
             <Card className="shadow-lg">
                 <CardBody className="p-6">
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">🔹 Фронтенд на Next.js (57 000 ₽)</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">Фронтенд на Next.js</h3>
                     <ul className="space-y-2 text-sm text-gray-600">
                         <li className="flex items-start">
                             <CheckCircleIcon className="w-3 h-3 text-success-500 mt-0.5 mr-2 shrink-0" />

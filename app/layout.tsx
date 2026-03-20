@@ -5,7 +5,10 @@ import './globals.css';
 import { Providers } from './providers';
 
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap', // 👈 Улучшает восприятие при загрузке
+});
 
 export const metadata: Metadata = {
   title: 'Коммерческое предложение — Модернизация licey.net',

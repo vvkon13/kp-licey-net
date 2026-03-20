@@ -89,7 +89,7 @@ export function ApiLayerCard() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <ArrowsRightLeftIcon className="w-12 h-12 text-modern-600" />
-            <h3 className="text-2xl font-bold text-gray-800">Дополнительный API-слой </h3>
+            <h3 className="text-2xl font-bold text-gray-800">API-слой </h3>
           </div>
           <Chip color="primary" variant="flat">Новое</Chip>
         </div>

@@ -170,7 +170,7 @@ export function DatabaseCard() {
               <li key={index} className="flex items-start text-xs text-gray-600">
                 <CheckCircleIcon className="w-3 h-3 text-legacy-500 mt-0.5 mr-2 shrink-0" />
                 <span className="flex-1">
-                  {item.name} — <span className="font-medium">{item.status}</span>
+                  {item.name}  <span className="font-medium hidden sm:inline">— {item.status}</span>
                 </span>
                 {showIntegrationsWarning && (
                   <span className={`ml-2 px-2 py-0.5 rounded text-[10px] font-medium ${item.risk === 'high' ? 'bg-red-100 text-red-700' :
